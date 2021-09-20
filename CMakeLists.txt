@@ -80,6 +80,10 @@ else()
   include(FetchContent)
   FetchContent_Declare(CURL GIT_REPOSITORY https://github.com/curl/curl.git)
   FetchContent_MakeAvailable(CURL)
+  set(CURL_INCLUDE_DIRS libcurl)
+  message(STATUS "Found CURL version: ${CURL_VERSION_STRING}")
+  message(STATUS "Using CURL include dir(s): ${CURL_INCLUDE_DIRS}")
+  message(STATUS "Using CURL lib(s): ${CURL_LIBRARIES}")
 endif()
 
 # All following targets should search these directories for headers
